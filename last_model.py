@@ -98,9 +98,7 @@ if texte is not None and texte.strip() != "":
         else:
             freqtable[word] = 1
 
-    # Affichage des fréquences des mots
-    st.write("Fréquences des mots :", freqtable)
-
+  
     # Tokenisation des phrases
     sentences = sent_tokenize(texte)
 
@@ -118,7 +116,7 @@ if texte is not None and texte.strip() != "":
 
     # Calcul des valeurs des phrases
     sentenceValue = getsentenceValue()
-    st.write("Valeurs des phrases :", sentenceValue)
+
 
     # Calcul de la moyenne des valeurs des phrases
     def getsumValues():
@@ -129,7 +127,7 @@ if texte is not None and texte.strip() != "":
         return average
 
     average = getsumValues()
-    st.write(f"Moyenne des valeurs des phrases : {average}")
+   
 
     # Génération du résumé basé sur les valeurs
     summary = ''
@@ -138,11 +136,10 @@ if texte is not None and texte.strip() != "":
             summary += " " + sentence
 
     # Affichage du résumé
-    st.subheader("Résumé simple basé sur la fréquence des mots :")
     st.write(summary)
 
     # Sélection du modèle pour le résumé
-    model_choice = st.selectbox("Choisissez le modèle à utiliser pour le résumé :", ["BART", "T5"])
+    model_choice = st.selectbox("Choisissez un autre modèle à utiliser pour le résumé :", ["BART", "T5"])
 
     # Chargement du modèle choisi
     if model_choice == "BART":
