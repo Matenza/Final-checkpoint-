@@ -136,6 +136,7 @@ if texte is not None and texte.strip() != "":
             summary += " " + sentence
 
     # Affichage du résumé
+    st.subheader("Résumé:")
     st.write(summary)
 
     # Sélection du modèle pour le résumé
